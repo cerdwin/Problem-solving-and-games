@@ -1,0 +1,351 @@
+from rosemary import Item, update
+# BRIE
+ 
+def test_brie_name_change():
+    # Prepare for the test
+    item = Item('Aged Brie', days_left=3, quality=5)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.name == 'Aged Brie':
+        return True
+    else:
+        return False
+ 
+ 
+def test_brie_quality():
+    # Prepare for the test
+    item = Item('Aged Brie', days_left=3, quality=0)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality != 1:
+        return False
+    else:
+        return True
+ 
+def test_brie_trvanlivost():
+    # Prepare for the test
+    item = Item('Aged Brie', days_left=3, quality=0)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.days_left != 2:
+        return False
+    else:
+        return True
+ 
+ 
+ 
+def test_brie_quality_under_zero():
+    # Prepare for the test
+    item = Item('Aged Brie', days_left=3, quality=0)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality <= 0:
+        return False
+    else:
+        return True
+ 
+ 
+def test_brie_quality_above_50():
+    # Prepare for the test
+    item = Item('Aged Brie', days_left=3, quality=50)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality > 50:
+        return False
+    else:
+        return True
+ 
+ 
+# DIAMOND
+def test_diamond_name_change():
+    # Prepare for the test
+    item = Item('Diamond', days_left=3, quality=5)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.name == 'Diamond':
+        return True
+    else:
+        return False
+ 
+ 
+def test_diamond_due_date():
+    # Prepare for the test
+    item = Item('Diamond', days_left=3, quality=100)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.days_left != 3:
+        return False
+    else:
+        return True
+ 
+def test_diamond_quality_under_0():
+    # Prepare for the test
+    item = Item('Diamond', days_left=3, quality=0)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality >= 0:
+        return True
+    else:
+        return False
+ 
+def test_diamonds_quality():
+    # Prepare for the test
+    item = Item('Diamond', days_left=3, quality=100)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality != 100:
+        return False
+    else:
+        return True
+ 
+ 
+def test_tickets_name_change():
+    # Prepare for the test
+    item = Item('Tickets', days_left=3, quality=5)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.name == 'Tickets':
+        return True
+    else:
+        return False
+ 
+ 
+ 
+ 
+# QUALITY
+# UNDER 0
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+# QUALITY ABOVE 50
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+# TICKETS
+def test_ticket_trvanlivost():
+    # Prepare for the test
+    item = Item('Tickets', days_left=3, quality=100)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.days_left != 2:
+        return False
+    else:
+        return True
+ 
+def test_tickets_aging_above10():
+    # Prepare for the test
+    item = Item('Tickets', days_left=11, quality=10)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality != 11:
+        return False
+    else:
+        return True
+ 
+ 
+def test_tickets_aging_equal10():
+    # Prepare for the test
+    item = Item('Tickets', days_left=10, quality=10)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality != 12:
+        return False
+    else:
+        return True
+ 
+ 
+def test_tickets_aging_above_5():
+    # Prepare for the test
+    item = Item('Tickets', days_left=6, quality=10)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality != 12:
+        return False
+    else:
+        return True
+ 
+ 
+def test_tickets_aging_equal_5():
+    # Prepare for the test
+    item = Item('Tickets', days_left=5, quality=10)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality != 13:
+        return False
+    else:
+        return True
+ 
+ 
+def test_tickets_aging_above_1():
+    # Prepare for the test
+    item = Item('Tickets', days_left=2, quality=10)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality != 13:
+        return False
+    else:
+        return True
+ 
+ 
+def test_tickets_aging_equal_party_day():
+    # Prepare for the test
+    item = Item('Tickets', days_left=0, quality=10)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality != 0:
+        return False
+    else:
+        return True
+ 
+ 
+def test_tickets_aging_equal_1():
+    # Prepare for the test
+    item = Item('Tickets', days_left=1, quality=10)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality != 13:
+        return False
+    else:
+        return True
+ 
+ 
+def test_tickets_quality_under_0():
+    # Prepare for the test
+    item = Item('Tickets', days_left=3, quality=0)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality >= 0:
+        return True
+    else:
+        return False
+ 
+ 
+def test_tickets_quality_above_50():
+    item = Item('Tickets', days_left=3, quality=50)
+    update(item)
+    if item.quality <= 50:
+        return True
+    else:
+        return False
+ 
+ 
+# NORMAL
+ 
+def test_normal_days_left():
+    # Prepare for the test
+    item = Item('Bread', days_left=3, quality=100)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.days_left != 2:
+        return False
+    else:
+        return True
+ 
+def test_normal_item_decreases_days_left():
+    # Prepare for the test
+    item = Item('Bread', days_left=3, quality=5)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.days_left == 2:
+        return True
+    else:
+        return False
+ 
+ 
+def test_normal_quality():
+    # Prepare for the test
+    item = Item('Bread', days_left=3, quality=100)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality != 100:
+        return True
+    else:
+        return False
+ 
+ 
+def test_normal_name_change():
+    # Prepare for the test
+    item = Item('Bread', days_left=3, quality=5)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.name== 'Bread':
+        return True
+    else:
+        return False
+ 
+def test_normal_quality_under_0():
+    # Prepare for the test
+    item = Item('Bread', days_left=3, quality=0)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality>=0:
+        return True
+    else:
+        return False
+ 
+ 
+def test_normal_quality_above_50():
+    # Prepare for the test
+    item = Item('Bread', days_left=3, quality=50)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality>=0:
+        return True
+    else:
+        return False
+ 
+ 
+def test_normal_quality_due():
+    # Prepare for the test
+    item = Item('Bread', days_left=0, quality=50)
+    # Call to the tested function
+    update(item)
+    # Check the specification
+    if item.quality != 48:
+        return False
+    else:
+        return True
