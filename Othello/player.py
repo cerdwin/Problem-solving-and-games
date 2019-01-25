@@ -1,5 +1,5 @@
 class MyPlayer:
-    """Trivial player looking into near future and adjusting his heuristics"""
+    """Trivial player looking into near future (only 1st depth analysis due to time constraint) and adjusting his heuristics"""
  
     # valid directions of movement along the board
     directions = [(0, 1), (1, 0), (1, 1), (-1, 0), (0, -1), (-1, -1), (-1, 1), (1, -1)]
