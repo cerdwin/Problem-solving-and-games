@@ -9,3 +9,5 @@ Consists of following projects:
 3. Simple Spam filter
 4. Maze generator and an agent finding its way through mazes (completed with a classmate)
 5. Miscellaneous - code testing, quick tests, etc.
+
+completed mostly myself seldomly with a classmate, some code - especially testing and animations, provided by teachers.
