@@ -1,5 +1,5 @@
 # Problem-solving-and-games
-Coursework for a Python course, obtained an A grade. Graded mostly through manual evaluation by teachers and code performance in
+Coursework for a Python course, obtained an A grade (over 90%). Graded mostly through manual evaluation by teachers and code performance in
 class-held tournaments.
 
 Consists of following projects:
